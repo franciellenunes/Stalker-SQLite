@@ -1,0 +1,102 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:paddingTop="32dp"
+    android:paddingLeft="8dp"
+    android:paddingRight="8dp"
+    android:orientation="vertical"
+    tools:context=".MostrarVitima">
+
+    <TextView
+        android:id="@+id/lblNome"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="?attr/colorButtonNormal"
+        android:text="@string/cadNome"
+        android:textAlignment="textStart"
+        android:textSize="24sp" />
+
+    <TextView
+        android:id="@+id/txtNomeRes"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:textSize="18sp" />
+
+    <TextView
+        android:id="@+id/lblEmp"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="?attr/colorButtonNormal"
+        android:text="@string/cadEmprego"
+        android:textAlignment="textStart"
+        android:textSize="24sp" />
+
+    <TextView
+        android:id="@+id/txtEmpRes"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:textAlignment="textStart"
+        android:textSize="18sp" />
+
+    <TextView
+        android:id="@+id/lblDataNasc"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="?attr/colorButtonNormal"
+        android:text="@string/cadDataNasc"
+        android:textAlignment="textStart"
+        android:textSize="24sp" />
+
+    <TextView
+        android:id="@+id/txtDataNascRes"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:textSize="18sp" />
+
+    <TextView
+        android:id="@+id/lblTel"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="?attr/colorButtonNormal"
+        android:text="@string/cadTel"
+        android:textAlignment="textStart"
+        android:textSize="24sp" />
+
+    <TextView
+        android:id="@+id/txtTelRes"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:textSize="18sp" />
+
+    <TextView
+        android:id="@+id/lblDesc"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="?attr/colorButtonNormal"
+        android:text="@string/cadDescricao"
+        android:textAlignment="textStart"
+        android:textSize="24sp" />
+
+    <TextView
+        android:id="@+id/txtDescRes"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:textSize="18sp" />
+
+    <Button
+        android:id="@+id/btnEditar"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:onClick="clickEditar"
+        android:text="Editar" />
+
+    <Button
+        android:id="@+id/btnRemover"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:onClick="clickRemover"
+        android:text="Remover" />
+</LinearLayout>

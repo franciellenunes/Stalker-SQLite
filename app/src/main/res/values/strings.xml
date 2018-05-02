@@ -1,0 +1,11 @@
+<resources>
+    <string name="app_name">StalkerSQLite</string>
+    <string name="cadastrar">Cadastrar</string>
+    <string name="listar">Listar</string>
+    <string name="cadNome">Nome</string>
+    <string name="cadEmprego">Emprego</string>
+    <string name="cadDataNasc">Data de Nascimento</string>
+    <string name="cadTel">Telefone</string>
+    <string name="cadDescricao">Descrição</string>
+    <string name="cadSalvar">Salvar</string>
+</resources>
