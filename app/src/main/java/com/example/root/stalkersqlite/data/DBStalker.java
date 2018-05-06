@@ -5,6 +5,7 @@ import android.content.Context;
 import android.database.Cursor;
 import android.database.SQLException;
 import android.database.sqlite.SQLiteDatabase;
+import android.widget.SimpleCursorAdapter;
 
 import com.example.root.stalkersqlite.Vitima;
 
@@ -226,6 +227,52 @@ public class DBStalker {
         }
         cursor.close();
         return null;
+    }
+
+    public static Vitima[] vitimasToArray() throws DBStalkerException {
+        if (dbHelper ==  null) {
+            throw new DBStalkerException("DBStalker não foi inicializado!");
+        }
+
+        SQLiteDatabase stalkerDB = dbHelper.getReadableDatabase();
+
+        String[] cols = new String[]{
+                DBTableFields.TableVitima._ID,
+                DBTableFields.TableVitima.nome,
+                DBTableFields.TableVitima.emprego,
+                DBTableFields.TableVitima.dataNasc,
+                DBTableFields.TableVitima.telefone,
+                DBTableFields.TableVitima.descricao
+        };
+
+        Cursor cursor = stalkerDB.query(DBTableFields.TableVitima.tableName,
+                cols,
+                null,
+                null,
+                null,
+                null,
+                null);
+
+        Vitima[] vits = null;
+
+        if(cursor.getCount() > 0){
+            vits = new Vitima[cursor.getCount()];
+            int i = 0;
+
+            while(cursor.moveToNext()){
+                long id = cursor.getLong(cursor.getColumnIndex(DBTableFields.TableVitima._ID));
+                String nome = cursor.getString(cursor.getColumnIndex(DBTableFields.TableVitima.nome));
+                String emprego = cursor.getString(cursor.getColumnIndex(DBTableFields.TableVitima.emprego));
+                String dataNasc = cursor.getString(cursor.getColumnIndex(DBTableFields.TableVitima.dataNasc));
+                String telefone = cursor.getString(cursor.getColumnIndex(DBTableFields.TableVitima.telefone));
+                String descricao = cursor.getString(cursor.getColumnIndex(DBTableFields.TableVitima.descricao));
+                vits[i] = new Vitima(id, nome, emprego, dataNasc, telefone, descricao);
+                i++;
+            }
+        }
+        cursor.close();
+        stalkerDB.close();
+        return vits;
     }
 
 }

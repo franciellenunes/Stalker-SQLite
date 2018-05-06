@@ -19,7 +19,7 @@
         <activity android:name=".Cadastrar" />
         <activity android:name=".Listar" />
         <activity android:name=".MostrarVitima" />
-        <activity android:name=".EditarVitima"></activity>
+        <activity android:name=".EditarVitima" />
     </application>
 
 </manifest>
